@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <button onclick="toggleFullScreen()">Toggle Fullscreen</button>
-
-<script>
-function toggleFullScreen() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen(); 
-    }
-  }
-}
-</script>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -23,7 +10,7 @@ function toggleFullScreen() {
               vr-mode-ui="enabled: true"
               gesture-detector
              >
-Properties>
+  
       <a-marker type="pattern" preset="custom" url="https://mokosdaniel.github.io/ARtrial/pattern-3Dmarkerqrasimmetric.patt">        
 
    
@@ -39,9 +26,23 @@ Properties>
         <a-entity light="type: point; intensity: 3; distance: 0; decay: 1"
           position="0 100 100"></a-entity>
 
-
       </a-marker>
       <a-entity camera></a-entity>
+    
+  <button onclick="toggleFullScreen()">Toggle Fullscreen</button>
+
+<script>
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen(); 
+    }
+  }
+}
+</script>
+        
     </a-scene>
   </body>
 </html>
